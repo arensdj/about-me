@@ -4,15 +4,14 @@ var playGame = prompt('Would you like to play my guessing game (please enter yes
 
 var answer;
 
-alert('User entered: ' + playGame);
-
-// Convert response to lower case
+// Convert response to all lower case
 playGame = playGame.toLowerCase();
 
 if(playGame === 'y' || playGame === 'yes') {
   alert('Great! Here we go');
   console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
   
+  // Question 1
   answer = prompt('Can I speak French (please enter yes or no)?');
   answer = answer.toLowerCase();
 
@@ -25,6 +24,7 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" I cannot speak French.  You are correct!');
   }
 
+  // Question 2
   answer = prompt('Do I like to watch science fiction movies (please answer yes or no)?');
   answer = answer.toLowerCase();
 
@@ -36,6 +36,7 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" that I don\'t watch science fiction movies.  Oops wrong answer.  I\'m a science fiction junky.');
   }
 
+  // Question 3
   answer = prompt('Have I ever snorkled (please answer yes or no)?');
   answer = answer.toLowerCase();
 
@@ -47,6 +48,7 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
   }
 
+  // Question 4
   answer = prompt('Have I gone zip lining (please answer yes or no)?');
   answer = answer.toLowerCase();
 
@@ -58,6 +60,18 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed correctly.  I have zip lined.  It was a blast!');
   }
   
+  // Question 5
+  answer = prompt('Last question.  Do I know how to fix a leaky faucet?');
+  answer = answer.toLowerCase();
+
+  if(answer === 'y' || answer === 'yes') {
+    alert('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
+    console.log('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
+  } else if (answer === 'n' || answer === 'no') {
+    alert('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct.  My husband takes care of this.');
+    console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct.  My husband takes care of this.');
+  }
+
   alert('Thanks for playing my guessing game.');
 
 } else {
