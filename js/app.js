@@ -67,7 +67,7 @@ if(playGame === 'y' || playGame === 'yes') {
   }
   
   // Question 5
-  answer = prompt('Do I know how to fix a leaky faucet?');
+  answer = prompt('Do I know how to fix a leaky faucet (please enter yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
@@ -107,17 +107,38 @@ if(playGame === 'y' || playGame === 'yes') {
   // Question 7
   var colorArray = ['orange', 'blue', 'gray', 'red'];
   numberOfGuessesLeft = 6;
-  var index = 0;
+  var guessedColor = false;
+  //var index = 0;
 
+  // The user will be given six chances to guess a color in color array.
   while(numberOfGuessesLeft > 0) {
     answer = prompt('Guess the color of one of my raincoats:');
 
-    if(answer === colorArray[index]) {
-      alert('Your guess is correct!');
-      correctAnswerCounter++;
+    for(var i = 0; i < colorArray.length; i++) {
+      if(answer === colorArray[i]) {
+        alert('Your guess is correct!');
+        // Keep track of correct number of guesses by increment counter
+        guessedColor = true;
+        correctAnswerCounter++;
+        break;
+      } else {
+        continue;
+      }
+    }
+
+    if(guessedColor) {
+      break;
+    } else {
+      alert('Wrong guess.  Try again.');
+      //Subtract one from the number of guesses left variable.
+      numberOfGuessesLeft--;
     }
   }
 
+  // Output the content of color array 
+  alert('The colors of my raincoats are: ' + colorArray);
+
+  // Output the number of correct guesses.
   alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct.');
 
 } else {
