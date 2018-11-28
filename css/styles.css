@@ -1,8 +1,21 @@
 body {
-  background-color: gray;
+  background-color: lightcyan;
 }
 
 h1 {
   color: brown;
+  font-weight: bold;
   font-size: 20px;
+  text-align: center;
 }
+
+ol {
+  padding-top: 10px;
+  list-style: decimal;
+}
+
+ul {
+  padding-top: 10px;
+  list-style: circle;
+}
+

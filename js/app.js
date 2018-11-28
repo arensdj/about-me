@@ -4,12 +4,14 @@ var playGame = prompt('Would you like to play my guessing game (please enter yes
 
 var answer;
 var correctAnswerCounter = 0;
+var firstName;
 
 // Convert response to all lower case
 playGame = playGame.toLowerCase();
 
 if(playGame === 'y' || playGame === 'yes') {
   alert('Great! Here we go');
+  firstName = prompt('Please enter you name: ');
   console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
   
   // Question 1
@@ -78,17 +80,15 @@ if(playGame === 'y' || playGame === 'yes') {
   }
 
   // Question 6
+  // This is the number to be guessed.
   var myNumber = 3;
-  var guessCounter = 0;
+  // This is the number of guesses the user is given.
   var numberOfGuessesLeft = 4;
-  //var guessesLeft = 0;
-  // answer = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
-  // answer = parseInt(answer);
-
+  
   for(var i = 0; i < 4; i++) {
     answer = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
     answer = parseInt(answer);
-    guessCounter++;
+    //guessCounter++;
 
     if(answer === myNumber) {
       alert('You guessed my number!');
@@ -104,7 +104,21 @@ if(playGame === 'y' || playGame === 'yes') {
     }
   } 
 
-  alert('Thanks for playing my guessing game.  You got ' + correctAnswerCounter + ' out of 7 questions correct.');
+  // Question 7
+  var colorArray = ['orange', 'blue', 'gray', 'red'];
+  numberOfGuessesLeft = 6;
+  var index = 0;
+
+  while(numberOfGuessesLeft > 0) {
+    answer = prompt('Guess the color of one of my raincoats:');
+
+    if(answer === colorArray[index]) {
+      alert('Your guess is correct!');
+      correctAnswerCounter++;
+    }
+  }
+
+  alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct.');
 
 } else {
   alert('Okay.  Try again next time.');
