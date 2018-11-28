@@ -3,6 +3,7 @@
 var playGame = prompt('Would you like to play my guessing game (please enter yes or no)?');
 
 var answer;
+var correctAnswerCounter = 0;
 
 // Convert response to all lower case
 playGame = playGame.toLowerCase();
@@ -18,9 +19,10 @@ if(playGame === 'y' || playGame === 'yes') {
   if(answer === 'y' || answer ==='yes') {
     alert('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
     console.log('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
-  } else { // User answered either no, n or N
+  } else { // User answered either no or n
     alert('The user guessed "' + answer + '" that I cannot speak French.  You are correct!');
     console.log('The user guessed "' + answer + '" I cannot speak French.  You are correct!');
+    correctAnswerCounter++;
   }
 
   // Question 2
@@ -30,6 +32,7 @@ if(playGame === 'y' || playGame === 'yes') {
   if(answer === 'y' || answer === 'yes') {
     alert('The user guessed "' + answer + '" that I watch science fiction.  Correct!  I love science fiction flicks.');
     console.log('The user guessed "' + answer + '" that I watch science fiction movies.  Correct!');
+    correctAnswerCounter++;
   } else {
     alert('The user guessed "' + answer + '" that I don\'t watch science fiction.  Oops wrong answer. I\'m a science fiction junky.');
     console.log('The user guessed "' + answer + '" that I don\'t watch science fiction movies.  Oops wrong answer.  I\'m a science fiction junky.');
@@ -42,6 +45,7 @@ if(playGame === 'y' || playGame === 'yes') {
   if(answer === 'y' || answer === 'yes') {
     alert('The user guessed "' + answer + '" that I have snorkled.  Correct!');
     console.log('The user guessed "' + answer + '" that I have snorked.  Correct!');
+    correctAnswerCounter++;
   } else {
     alert('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
     console.log('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
@@ -57,10 +61,11 @@ if(playGame === 'y' || playGame === 'yes') {
   } else {
     alert('The user guessed correctly.  I have zip lined.  It was a blast!');
     console.log('The user guessed correctly.  I have zip lined.  It was a blast!');
+    correctAnswerCounter++;
   }
   
   // Question 5
-  answer = prompt('Last question.  Do I know how to fix a leaky faucet?');
+  answer = prompt('Do I know how to fix a leaky faucet?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
@@ -68,10 +73,38 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
   } else if (answer === 'n' || answer === 'no') {
     alert('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct.  My husband takes care of this.');
-    console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct.  My husband takes care of this.');
+    console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
+    correctAnswerCounter++;
   }
 
-  alert('Thanks for playing my guessing game.');
+  // Question 6
+  var myNumber = 3;
+  var guessCounter = 0;
+  var numberOfGuessesLeft = 4;
+  //var guessesLeft = 0;
+  // answer = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
+  // answer = parseInt(answer);
+
+  for(var i = 0; i < 4; i++) {
+    answer = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
+    answer = parseInt(answer);
+    guessCounter++;
+
+    if(answer === myNumber) {
+      alert('You guessed my number!');
+      correctAnswerCounter++;
+      break;
+    } else if(answer > myNumber) {
+      numberOfGuessesLeft--;
+      alert('Your guess is too high. You have ' + numberOfGuessesLeft + ' guesses left.');
+      continue;
+    } else if(answer < myNumber) {
+      numberOfGuessesLeft--;
+      alert('Your guess is too low. You have ' + numberOfGuessesLeft + ' guesses left.');
+    }
+  } 
+
+  alert('Thanks for playing my guessing game.  You got ' + correctAnswerCounter + ' out of 7 questions correct.');
 
 } else {
   alert('Okay.  Try again next time.');
