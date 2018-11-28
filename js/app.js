@@ -16,7 +16,6 @@ if(playGame === 'y' || playGame === 'yes') {
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer ==='yes') {
-
     alert('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
     console.log('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
   } else { // User answered either no, n or N
@@ -28,7 +27,7 @@ if(playGame === 'y' || playGame === 'yes') {
   answer = prompt('Do I like to watch science fiction movies (please answer yes or no)?');
   answer = answer.toLowerCase();
 
-  if(answer === 'y' || answer === 'yes' || answer === 'YES') {
+  if(answer === 'y' || answer === 'yes') {
     alert('The user guessed "' + answer + '" that I watch science fiction.  Correct!  I love science fiction flicks.');
     console.log('The user guessed "' + answer + '" that I watch science fiction movies.  Correct!');
   } else {
