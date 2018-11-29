@@ -10,7 +10,6 @@ var firstName;
 playGame = playGame.toLowerCase();
 
 if(playGame === 'y' || playGame === 'yes') {
-  //alert('Great! Here we go');
   firstName = prompt('Great!  Please enter you name: ');
   console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
   
@@ -74,7 +73,7 @@ if(playGame === 'y' || playGame === 'yes') {
     alert('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
     console.log('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
   } else if (answer === 'n' || answer === 'no') {
-    alert('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct.  My husband takes care of this.');
+    alert('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
     console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
     correctAnswerCounter++;
   }
@@ -84,21 +83,22 @@ if(playGame === 'y' || playGame === 'yes') {
   var myNumber = 3;
   // This is the number of guesses the user is given.
   var numberOfGuessesLeft = 4;
+  var numberGuessed = 0;
   
   for(var i = 0; i < 4; i++) {
-    answer = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
-    answer = parseInt(answer);
+    numberGuessed = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
+    numberGuessed = parseInt(numberGuessed);
     //guessCounter++;
 
-    if(answer === myNumber) {
+    if(numberGuessed === myNumber) {
       alert('You guessed my number!');
       correctAnswerCounter++;
       break;
-    } else if(answer > myNumber) {
+    } else if(numberGuessed > myNumber) {
       numberOfGuessesLeft--;
       alert('Your guess is too high. You have ' + numberOfGuessesLeft + ' guesses left.');
       continue;
-    } else if(answer < myNumber) {
+    } else if(numberGuessed < myNumber) {
       numberOfGuessesLeft--;
       alert('Your guess is too low. You have ' + numberOfGuessesLeft + ' guesses left.');
     }
@@ -131,17 +131,27 @@ if(playGame === 'y' || playGame === 'yes') {
       // Guessing a color in array breaks out of the while loop
       break;
     } else {
-      alert('Wrong guess.  Try again.');
-      //Subtract one from the number of guesses left variable.
       numberOfGuessesLeft--;
+      alert('Wrong guess.  You have ' + numberOfGuessesLeft + ' guesses left.');
+      //Subtract one from the number of guesses left variable.
     }
   }
 
   // Output the content of color array 
   alert('The colors of my raincoats are: ' + colorArray);
 
+  // Output a message for user to know how she did.
+  var gameResultMessage;
+  if(correctAnswerCounter === 7) {
+    gameResultMessage = 'You guessed all correctly!';
+  } else if(correctAnswerCounter > 4 && correctAnswerCounter < 7) {
+    gameResultMessage = 'That\'s pretty good!';
+  } else {
+    gameResultMessage = 'Better luck next time.';
+  }
+
   // Output the number of correct guesses.
-  alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct.');
+  alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct. ' + gameResultMessage);
 
 } else {
   alert('Okay.  Try again next time.');
