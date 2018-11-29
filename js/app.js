@@ -88,7 +88,6 @@ if(playGame === 'y' || playGame === 'yes') {
   for(var i = 0; i < 4; i++) {
     numberGuessed = prompt('I\'m thinking of a number between 1 to 10.  Please guess my number.');
     numberGuessed = parseInt(numberGuessed);
-    //guessCounter++;
 
     if(numberGuessed === myNumber) {
       alert('You guessed my number!');
@@ -97,7 +96,7 @@ if(playGame === 'y' || playGame === 'yes') {
     } else if(numberGuessed > myNumber) {
       numberOfGuessesLeft--;
       alert('Your guess is too high. You have ' + numberOfGuessesLeft + ' guesses left.');
-      continue;
+      //continue;
     } else if(numberGuessed < myNumber) {
       numberOfGuessesLeft--;
       alert('Your guess is too low. You have ' + numberOfGuessesLeft + ' guesses left.');
@@ -108,7 +107,6 @@ if(playGame === 'y' || playGame === 'yes') {
   var colorArray = ['orange', 'blue', 'gray', 'red'];
   numberOfGuessesLeft = 6;
   var guessedColor = false;
-  //var index = 0;
 
   // The user will be given six chances to guess a color in color array.
   while(numberOfGuessesLeft > 0) {
@@ -121,9 +119,10 @@ if(playGame === 'y' || playGame === 'yes') {
         // Keep track of correct number of guesses by increment counter
         guessedColor = true;
         correctAnswerCounter++;
+        // User guessed correctly.  Break out of for loop.
         break;
-      } else {
-        continue;
+      // } else {
+      //   continue;
       }
     }
 
