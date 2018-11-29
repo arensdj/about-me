@@ -1,21 +1,38 @@
 body {
-  background-color: lightcyan;
+  background-color: bisque;
 }
 
 h1 {
-  color: brown;
+  color: purple;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  background-color: lightslategray;
+  height: 40px;
+  padding-top: 10px;
+}
+
+h2 {
   font-weight: bold;
   font-size: 20px;
-  text-align: center;
+  color: brown;
+}
+
+section {
+  background-color: lightgray;
+  padding: 20px 20px;
+  /* font-size: 25px; */
 }
 
 ol {
-  padding-top: 10px;
   list-style: decimal;
+  padding: 20px 40px;
+  font-size: 20px;
 }
 
 ul {
-  padding-top: 10px;
-  list-style: circle;
+  padding: 10px 40px;
+  list-style: square;
+  font-size: 20px;
 }
 
