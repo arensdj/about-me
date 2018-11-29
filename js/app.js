@@ -1,18 +1,12 @@
 'use strict';
 
-var playGame = prompt('Would you like to play my guessing game (please enter yes or no)?');
+
 
 var answer;
 var correctAnswerCounter = 0;
 var firstName;
 
-// Convert response to all lower case
-playGame = playGame.toLowerCase();
-
-if(playGame === 'y' || playGame === 'yes') {
-  firstName = prompt('Great!  Please enter you name: ');
-  console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
-  
+function question1() {
   // Question 1
   answer = prompt('Can I speak French (please enter yes or no)?');
   answer = answer.toLowerCase();
@@ -25,7 +19,9 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" I cannot speak French.  You are correct!');
     correctAnswerCounter++;
   }
+}  
 
+function question2() {
   // Question 2
   answer = prompt('Do I like to watch science fiction movies (please answer yes or no)?');
   answer = answer.toLowerCase();
@@ -38,7 +34,9 @@ if(playGame === 'y' || playGame === 'yes') {
     alert('The user guessed "' + answer + '" that I don\'t watch science fiction.  Oops wrong answer. I\'m a science fiction junky.');
     console.log('The user guessed "' + answer + '" that I don\'t watch science fiction movies.  Oops wrong answer.  I\'m a science fiction junky.');
   }
+}
 
+function question3() {
   // Question 3
   answer = prompt('Have I ever snorkled (please answer yes or no)?');
   answer = answer.toLowerCase();
@@ -51,7 +49,9 @@ if(playGame === 'y' || playGame === 'yes') {
     alert('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
     console.log('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
   }
+}
 
+function question4() {
   // Question 4
   answer = prompt('Have I gone zip lining (please answer yes or no)?');
   answer = answer.toLowerCase();
@@ -64,7 +64,9 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed correctly.  I have zip lined.  It was a blast!');
     correctAnswerCounter++;
   }
-  
+}
+
+function question5() {
   // Question 5
   answer = prompt('Do I know how to fix a leaky faucet (please enter yes or no)?');
   answer = answer.toLowerCase();
@@ -77,7 +79,9 @@ if(playGame === 'y' || playGame === 'yes') {
     console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
     correctAnswerCounter++;
   }
+}
 
+function question6() {
   // Question 6
   // This is the number to be guessed.
   var myNumber = 3;
@@ -102,10 +106,12 @@ if(playGame === 'y' || playGame === 'yes') {
       alert('Your guess is too low. You have ' + numberOfGuessesLeft + ' guesses left.');
     }
   } 
+}
 
+function question7() {
   // Question 7
   var colorArray = ['orange', 'blue', 'gray', 'red'];
-  numberOfGuessesLeft = 6;
+  var numberOfGuessesLeft = 6;
   var guessedColor = false;
 
   // The user will be given six chances to guess a color in color array.
@@ -121,8 +127,6 @@ if(playGame === 'y' || playGame === 'yes') {
         correctAnswerCounter++;
         // User guessed correctly.  Break out of for loop.
         break;
-      // } else {
-      //   continue;
       }
     }
 
@@ -138,6 +142,24 @@ if(playGame === 'y' || playGame === 'yes') {
 
   // Output the content of color array 
   alert('The colors of my raincoats are: ' + colorArray);
+}
+
+var playGame = prompt('Would you like to play my guessing game (please enter yes or no)?');
+
+// Convert response to all lower case
+playGame = playGame.toLowerCase();
+
+if(playGame === 'y' || playGame === 'yes') {
+  firstName = prompt('Great!  Please enter you name: ');
+  console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
+    
+  question1();
+  question2();
+  question3();
+  question4();
+  question5();
+  question6();
+  question7();
 
   // Output a message for user to know how she did.
   var gameResultMessage;
@@ -151,7 +173,6 @@ if(playGame === 'y' || playGame === 'yes') {
 
   // Output the number of correct guesses.
   alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct. ' + gameResultMessage);
-
 } else {
   alert('Okay.  Try again next time.');
   console.log('Oh well.  The user does not want to play my guessing game.');
