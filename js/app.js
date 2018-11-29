@@ -10,8 +10,8 @@ var firstName;
 playGame = playGame.toLowerCase();
 
 if(playGame === 'y' || playGame === 'yes') {
-  alert('Great! Here we go');
-  firstName = prompt('Please enter you name: ');
+  //alert('Great! Here we go');
+  firstName = prompt('Great!  Please enter you name: ');
   console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
   
   // Question 1
@@ -113,6 +113,7 @@ if(playGame === 'y' || playGame === 'yes') {
   // The user will be given six chances to guess a color in color array.
   while(numberOfGuessesLeft > 0) {
     answer = prompt('Guess the color of one of my raincoats:');
+    answer = answer.toLowerCase();
 
     for(var i = 0; i < colorArray.length; i++) {
       if(answer === colorArray[i]) {
@@ -127,6 +128,7 @@ if(playGame === 'y' || playGame === 'yes') {
     }
 
     if(guessedColor) {
+      // Guessing a color in array breaks out of the while loop
       break;
     } else {
       alert('Wrong guess.  Try again.');
