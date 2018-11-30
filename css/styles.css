@@ -1,15 +1,15 @@
-body {
-  background-color: bisque;
+header {
+  background: #2B2D42;
+  color: #8D99AE;
+  font-family: cursive;
+  padding-bottom: 40px;
 }
 
 h1 {
   color: purple;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
-  background-color: lightslategray;
-  height: 40px;
-  padding-top: 10px;
 }
 
 h2 {
@@ -21,7 +21,9 @@ h2 {
 section {
   background-color: lightgray;
   padding: 20px 20px;
-  /* font-size: 25px; */
+  /* height: 200px;
+  width: 200px;
+  display: inline-block; */
 }
 
 ol {
@@ -36,3 +38,20 @@ ul {
   font-size: 20px;
 }
 
+#top {
+  color:  #8D99AE;
+  font-size: 60px;
+}
+
+.favorites {
+  padding-left: 50px;
+  padding-right: 100px;
+  background-color: beige;
+  display: inline-block;
+  border: 2px solid lightgray;
+}
+
+.guessing-game {
+  background-color: lightcyan;
+  padding-left: 250px;
+}
