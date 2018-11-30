@@ -1,14 +1,10 @@
 'use strict';
 
-
-
-var answer;
 var correctAnswerCounter = 0;
-var firstName;
 
-function question1() {
-  // Question 1
-  answer = prompt('Can I speak French (please enter yes or no)?');
+// Question 1
+function languageFunc() {
+  var answer = prompt('Can I speak French (please enter yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer ==='yes') {
@@ -21,9 +17,9 @@ function question1() {
   }
 }  
 
-function question2() {
-  // Question 2
-  answer = prompt('Do I like to watch science fiction movies (please answer yes or no)?');
+// Question 2
+function movieGenreFunc() {
+  var answer = prompt('Do I like to watch science fiction movies (please answer yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
@@ -36,9 +32,9 @@ function question2() {
   }
 }
 
-function question3() {
-  // Question 3
-  answer = prompt('Have I ever snorkled (please answer yes or no)?');
+// Question 3
+function snorkleFunc() {
+  var answer = prompt('Have I ever snorkled (please answer yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
@@ -51,9 +47,9 @@ function question3() {
   }
 }
 
-function question4() {
-  // Question 4
-  answer = prompt('Have I gone zip lining (please answer yes or no)?');
+// Question 4
+function zipLineFunc() {
+  var answer = prompt('Have I gone zip lining (please answer yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'n' || answer === 'no') {
@@ -66,9 +62,9 @@ function question4() {
   }
 }
 
-function question5() {
-  // Question 5
-  answer = prompt('Do I know how to fix a leaky faucet (please enter yes or no)?');
+// Question 5
+function homeRepairFunc() {
+  var answer = prompt('Do I know how to fix a leaky faucet (please enter yes or no)?');
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
@@ -81,8 +77,8 @@ function question5() {
   }
 }
 
-function question6() {
-  // Question 6
+// Question 6
+function guessNumberFunc() {
   // This is the number to be guessed.
   var myNumber = 3;
   // This is the number of guesses the user is given.
@@ -108,15 +104,15 @@ function question6() {
   } 
 }
 
-function question7() {
-  // Question 7
+// Question 7
+function colorFunc() {
   var colorArray = ['orange', 'blue', 'gray', 'red'];
   var numberOfGuessesLeft = 6;
   var guessedColor = false;
 
   // The user will be given six chances to guess a color in color array.
   while(numberOfGuessesLeft > 0) {
-    answer = prompt('Guess the color of one of my raincoats:');
+    var answer = prompt('Guess the color of one of my raincoats:');
     answer = answer.toLowerCase();
 
     for(var i = 0; i < colorArray.length; i++) {
@@ -150,16 +146,16 @@ var playGame = prompt('Would you like to play my guessing game (please enter yes
 playGame = playGame.toLowerCase();
 
 if(playGame === 'y' || playGame === 'yes') {
-  firstName = prompt('Great!  Please enter you name: ');
+  var firstName = prompt('Great!  Please enter you name: ');
   console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
     
-  question1();
-  question2();
-  question3();
-  question4();
-  question5();
-  question6();
-  question7();
+  languageFunc();
+  movieGenreFunc();
+  snorkleFunc();
+  zipLineFunc();
+  homeRepairFunc();
+  guessNumberFunc();
+  colorFunc();
 
   // Output a message for user to know how she did.
   var gameResultMessage;

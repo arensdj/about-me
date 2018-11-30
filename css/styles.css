@@ -1,7 +1,9 @@
 header {
   background: #2B2D42;
   color: #8D99AE;
-  font-family: cursive;
+  /* font-family: 'Kaushan Script', cursive; */
+  font-family: 'Tangerine', cursive;
+  /* font-family: cursive; */
   padding-bottom: 40px;
 }
 
