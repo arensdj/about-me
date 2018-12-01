@@ -1,6 +1,7 @@
 'use strict';
 
 var correctAnswerCounter = 0;
+var firstName;
 
 // Question 1
 function languageFunc() {
@@ -8,14 +9,15 @@ function languageFunc() {
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer ==='yes') {
-    alert('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
-    console.log('The user guessed "' + answer + '" that I can speak French.  Oops wrong answer.');
-  } else { // User answered either no or n
-    alert('The user guessed "' + answer + '" that I cannot speak French.  You are correct!');
-    console.log('The user guessed "' + answer + '" I cannot speak French.  You are correct!');
+    alert('Incorrect answer.  I do not speak French.');
+    console.log('Incorrect answer.  I do not speak French.');
+  } else { 
+    alert('Correct! I cannot speak French.');
+    console.log('Correct!  I cannot speak French.');
+   
     correctAnswerCounter++;
   }
-}  
+} // end languageFunc()
 
 // Question 2
 function movieGenreFunc() {
@@ -23,14 +25,15 @@ function movieGenreFunc() {
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
-    alert('The user guessed "' + answer + '" that I watch science fiction.  Correct!  I love science fiction flicks.');
-    console.log('The user guessed "' + answer + '" that I watch science fiction movies.  Correct!');
+    alert('Correct!  I love watching science fiction movies.');
+    console.log('Correct!  I love watching science fiction movies.');
+    
     correctAnswerCounter++;
   } else {
-    alert('The user guessed "' + answer + '" that I don\'t watch science fiction.  Oops wrong answer. I\'m a science fiction junky.');
-    console.log('The user guessed "' + answer + '" that I don\'t watch science fiction movies.  Oops wrong answer.  I\'m a science fiction junky.');
+    alert('Incorrect.  I love watching science fiction movies.');
+    console.log('Incorrect.  I love watching science fiction movies.');
   }
-}
+} // end movieGenreFunc()
 
 // Question 3
 function snorkleFunc() {
@@ -38,14 +41,15 @@ function snorkleFunc() {
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
-    alert('The user guessed "' + answer + '" that I have snorkled.  Correct!');
-    console.log('The user guessed "' + answer + '" that I have snorked.  Correct!');
+    alert('Correct!  I have snorkled.');
+    console.log('Correct!  I have snorkled.');
+    
     correctAnswerCounter++;
   } else {
-    alert('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
-    console.log('The user guessed "' + answer + '" that I have not snorkled.  Oops wrong answer.');
+    alert('Incorrect.  I have snorkled.');
+    console.log('Incorrect.  I have snorkled.');
   }
-}
+} // end snorkleFunc()
 
 // Question 4
 function zipLineFunc() {
@@ -53,14 +57,15 @@ function zipLineFunc() {
   answer = answer.toLowerCase();
 
   if(answer === 'n' || answer === 'no') {
-    alert('The user guessed "' + answer + '" I have not zip lined.  Wrong answer.  I love to zip line.');
-    console.log('The user guessed "' + answer + '" I have not zip lined.  Wrong answer.  I love to zip line.');
+    alert('Incorrect.  I have zip lined.');
+    console.log('Incorrect.  I have zip lined.');
   } else {
-    alert('The user guessed correctly.  I have zip lined.  It was a blast!');
-    console.log('The user guessed correctly.  I have zip lined.  It was a blast!');
+    alert('Correct!  I have zip lined.');
+    console.log('Correct!  I have zip lined.');
+    
     correctAnswerCounter++;
   }
-}
+} // end zipLineFunc()
 
 // Question 5
 function homeRepairFunc() {
@@ -68,14 +73,15 @@ function homeRepairFunc() {
   answer = answer.toLowerCase();
 
   if(answer === 'y' || answer === 'yes') {
-    alert('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
-    console.log('The user guessed "' + answer + '" that I can fix a leaky faucet.  Unfortunately, I cannot. My husband takes care of this.');
+    alert('Incorrect.  I cannot fix a leaky faucet.');
+    console.log('Incorrect.  I cannot fix a leaky faucet.');
   } else if (answer === 'n' || answer === 'no') {
-    alert('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
-    console.log('The user guessed "' + answer + '" that I cannot fix a leaky faucet.  Correct!  My husband takes care of this.');
+    alert('Correct.  I cannot fix a leaky faucet.');
+    console.log('Correct.  I cannot fix a leaky faucet.');
+    
     correctAnswerCounter++;
   }
-}
+} // end homeRepairFunc()
 
 // Question 6
 function guessNumberFunc() {
@@ -83,6 +89,7 @@ function guessNumberFunc() {
   var myNumber = 3;
   // This is the number of guesses the user is given.
   var numberOfGuessesLeft = 4;
+  // The user's guess
   var numberGuessed = 0;
   
   for(var i = 0; i < 4; i++) {
@@ -90,7 +97,7 @@ function guessNumberFunc() {
     numberGuessed = parseInt(numberGuessed);
 
     if(numberGuessed === myNumber) {
-      alert('You guessed my number!');
+      alert('You guessed my number!  It was number ' + myNumber);
       correctAnswerCounter++;
       break;
     } else if(numberGuessed > myNumber) {
@@ -102,7 +109,7 @@ function guessNumberFunc() {
       alert('Your guess is too low. You have ' + numberOfGuessesLeft + ' guesses left.');
     }
   } 
-}
+} // end guessNumberFunc()
 
 // Question 7
 function colorFunc() {
@@ -118,7 +125,7 @@ function colorFunc() {
     for(var i = 0; i < colorArray.length; i++) {
       if(answer === colorArray[i]) {
         alert('Your guess is correct!');
-        // Keep track of correct number of guesses by increment counter
+        // Set boolean flag that color was guessed.  Keep track of correct number of guesses by incrementing counter
         guessedColor = true;
         correctAnswerCounter++;
         // User guessed correctly.  Break out of for loop.
@@ -130,47 +137,54 @@ function colorFunc() {
       // Guessing a color in array breaks out of the while loop
       break;
     } else {
+      //Subtract one from the number of guesses left variable.
       numberOfGuessesLeft--;
       alert('Wrong guess.  You have ' + numberOfGuessesLeft + ' guesses left.');
-      //Subtract one from the number of guesses left variable.
     }
   }
 
   // Output the content of color array 
   alert('The colors of my raincoats are: ' + colorArray);
-}
+} // end colorFunc()
 
-var playGame = prompt('Would you like to play my guessing game (please enter yes or no)?');
-
-// Convert response to all lower case
-playGame = playGame.toLowerCase();
-
-if(playGame === 'y' || playGame === 'yes') {
-  var firstName = prompt('Great!  Please enter you name: ');
-  console.log('Hooray! The user answered "' + playGame + '" and will play my guessing game.');
-    
-  languageFunc();
-  movieGenreFunc();
-  snorkleFunc();
-  zipLineFunc();
-  homeRepairFunc();
-  guessNumberFunc();
-  colorFunc();
-
+function displayGameResults() {
   // Output a message for user to know how she did.
-  var gameResultMessage;
+  var message;
   if(correctAnswerCounter === 7) {
-    gameResultMessage = 'You guessed all correctly!';
+    message = 'You guessed all correctly!';
   } else if(correctAnswerCounter > 4 && correctAnswerCounter < 7) {
-    gameResultMessage = 'That\'s pretty good!';
+    message = 'That\'s pretty good!';
   } else {
-    gameResultMessage = 'Better luck next time.';
+    message = 'Better luck next time.';
   }
 
   // Output the number of correct guesses.
-  alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct. ' + gameResultMessage);
-} else {
-  alert('Okay.  Try again next time.');
-  console.log('Oh well.  The user does not want to play my guessing game.');
-}
+  alert(firstName + ', thanks for playing.  You got ' + correctAnswerCounter + ' out of 7 questions correct. ' + message);
+} // end displayGameResults()
 
+function playGameFunc() {
+  var playGame = prompt('Would you like to play my guessing game (please enter yes or no)?');
+
+  // Convert response to all lower case
+  playGame = playGame.toLowerCase();
+
+  if(playGame === 'y' || playGame === 'yes') {
+    firstName = prompt('Great!  Please enter you name: ');
+    console.log('Hooray! The user wants to play my guessing game.');
+      
+    languageFunc();
+    movieGenreFunc();
+    snorkleFunc();
+    zipLineFunc();
+    homeRepairFunc();
+    guessNumberFunc();
+    colorFunc();
+
+    displayGameResults();
+  } else {
+    alert('Okay.  Try again next time.');
+    console.log('The user does not want to play my guessing game.');
+  }
+} // end playGameFunc()
+
+playGameFunc();

@@ -1,5 +1,6 @@
 header {
-  background: #2B2D42;
+  /* background: #2B2D42; */
+  background: beige;
   color: #8D99AE;
   /* font-family: 'Kaushan Script', cursive; */
   font-family: 'Tangerine', cursive;
@@ -11,7 +12,8 @@ h1 {
   color: purple;
   font-weight: bold;
   font-size: 20px;
-  text-align: center;
+  padding-left: 50px;
+  /* text-align: center; */
 }
 
 h2 {
