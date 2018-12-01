@@ -1,61 +1,89 @@
-header {
-  /* background: #2B2D42; */
-  background: beige;
-  color: #8D99AE;
-  /* font-family: 'Kaushan Script', cursive; */
-  font-family: 'Tangerine', cursive;
-  /* font-family: cursive; */
-  padding-bottom: 40px;
+/* Global styles
+----------------------------------------- */
+body {
+  background-color: rgb(160, 178, 189);
 }
-
 h1 {
   color: purple;
   font-weight: bold;
   font-size: 20px;
-  padding-left: 50px;
+  padding-left: 150px;
+  padding-top: 50px;
   /* text-align: center; */
 }
-
 h2 {
   font-weight: bold;
   font-size: 20px;
-  color: brown;
+  /* color: brown; */
+  /* text-align: center; */
 }
-
+h3 {
+  font-weight: bold;
+  padding-left: 35px;
+}
 section {
-  background-color: lightgray;
   padding: 20px 20px;
-  /* height: 200px;
-  width: 200px;
-  display: inline-block; */
 }
-
+section ol {
+  padding-left: 300px;
+}
+section h2 {
+  padding-left: 300px;
+}
+section ul {
+  padding-left: 350px;
+}
+nav li {
+  font-family: sans-serif;
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 20px;
+}
 ol {
   list-style: decimal;
-  padding: 20px 40px;
+  padding-top: 10px;
   font-size: 20px;
 }
-
 ul {
   padding: 10px 40px;
   list-style: square;
   font-size: 20px;
 }
-
-#top {
-  color:  #8D99AE;
-  font-size: 60px;
-}
-
-.favorites {
-  padding-left: 50px;
+p {
+  padding-left: 35px;
   padding-right: 100px;
-  background-color: beige;
-  display: inline-block;
-  border: 2px solid lightgray;
 }
-
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+.content-margin {
+  padding-left: 200px;
+}
+.education {
+  padding-left: 200px;
+}
+.profile-img {
+  height: 250px;
+  float: left;
+  margin-right: 30px;
+  overflow: auto;
+}
+#top {
+  color: rgb(78, 70, 70);
+  font-size: 80px;
+}
 .guessing-game {
-  background-color: lightcyan;
-  padding-left: 250px;
+  padding-left: 70px;
+}
+/* Header and Footer 
+----------------------------------------- */
+header {
+  /* font-family: 'Kaushan Script', cursive; */
+  font-family: 'Tangerine', cursive;
+}
+footer {
+  padding-left: 90px;
 }
